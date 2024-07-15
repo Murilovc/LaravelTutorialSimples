@@ -16,6 +16,7 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/suporte/{id}', [SuporteController::class, 'show'])->name('suporte.show');
 Route::post('/suporte', [SuporteController::class, 'store'])->name('suporte.store');
 Route::get('/suporte/create', [SuporteController::class, 'create'])->name('suporte.create');
 Route::get('/suporte', [SuporteController::class, 'index'])->name('suporte.index');

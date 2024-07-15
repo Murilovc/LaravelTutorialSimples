@@ -19,6 +19,18 @@ class SuporteController extends Controller
         ]);
     }
     
+    public function show(string|int $id)
+    {
+        //Suporte::find($id)
+        //Suporte::where('id', $id)->first();
+        //Suporte::where('id','!=', $id)->first();
+        if(!$suporte = Suporte::find($id)) {
+            return back();
+        }
+        
+        return view('admin/suporte/show', compact('suporte'));
+    }
+    
     public function create() 
     {
         return view('admin/suporte/create');
